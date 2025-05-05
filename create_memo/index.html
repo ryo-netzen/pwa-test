@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToDo PWA</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ToDoリスト</h1>
+  <input id="taskInput" placeholder="やることを入力" />
+  <button onclick="addTask()">追加</button>
+  <ul id="taskList"></ul>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker registered:', reg))
+        .catch(err => console.error('Service Worker registration failed:', err));
+    }
+  </script>
+  
+</body>
+</html>
