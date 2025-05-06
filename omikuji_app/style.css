@@ -1,11 +1,14 @@
 /* 和風フォント */
+html, body {
+    height: 100%; /* 高さを100%に設定 */
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Sawarabi Mincho', serif;
     background: url('https://source.unsplash.com/1600x900/?japanese,temple') no-repeat center center/cover;
-    margin: 0;
-    padding: 0;
     color: #3b1e08;
-    height: 100%; /* 高さを指定 */
     display: flex;
     justify-content: center;
     align-items: center; /* 縦方向に中央配置 */
@@ -24,7 +27,10 @@ body {
     flex-direction: column;
     justify-content: center; /* 垂直方向に中央 */
     align-items: center; /* 水平方向に中央 */
-    min-height: 300px; /* 高さの最小値を設定 */
+    min-height: 300px; /* 最小高さ */
+    width: 100%; /* 幅は100% */
+    max-width: 500px; /* 最大幅を500pxに制限 */
+    box-sizing: border-box;
 }
 
 /* 占うボタン風のデザイン */
@@ -56,8 +62,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; /* 中央に配置 */
+    width: 100%; /* 幅を100%に設定 */
 }
 
+/* アニメーション */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -79,4 +87,20 @@ body {
     margin-top: 10px;
     opacity: 0;
     transition: opacity 0.5s ease;
+}
+
+/* スマホサイズ対応（レスポンシブ） */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 40px 20px; /* パディングを調整 */
+    }
+
+    #btn {
+        width: 100%; /* ボタンを画面幅に合わせる */
+        font-size: 20px; /* ボタンの文字サイズを小さく */
+    }
+
+    #result {
+        font-size: 28px; /* 結果のフォントサイズを小さく */
+    }
 }
