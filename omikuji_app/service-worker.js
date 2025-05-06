@@ -2,16 +2,17 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open('omikuji-cache').then((cache) => {
             return cache.addAll([
-                '/',
-                'index.html',
-                'style.css',
-                'app.js',
-                'sounds/omikuji.mp3',
-                'icon.png'
+                '/pwa-test/',
+                '/pwa-test/index.html',
+                '/pwa-test/style.css',
+                '/pwa-test/app.js',
+                '/pwa-test/sounds/omikuji.mp3',
+                '/pwa-test/images/apple-touch-icon.png'
             ]);
         })
     );
 });
+
 
 self.addEventListener('fetch', (event) => {
     event.respondWith(
